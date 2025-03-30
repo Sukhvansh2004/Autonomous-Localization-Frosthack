@@ -162,3 +162,6 @@ The demonstration video showcases:
 Localization Accuracy: Accurate pose initialization under challenging conditions.
 
 Real-Time Performance: Visual overlays indicating tracking and pose consistency.
+
+Video:
+https://youtu.be/g2vBZdAMpTg?si=9FzisYGq3N2FlwiL
