@@ -58,9 +58,9 @@ The framework is organized into the following core modules:
    - Applies the PnP algorithm on the inliers to compute an initial pose estimate.  
    - The initial pose is refined using visual-inertial fusion.  
 
-4. **Data Management and Visualization Module:**  
-   - Handles storage and retrieval of map data.  
-   - Provides real-time visualization of the localization process (optional integration with tools such as RViz).  
+4. **TortoiseBot, Gazebo and Rviz:**  
+   - Handles the necessary packages required for tortoisebot functionality.
+   - Runs gazebo and rviz with proper visualization
 
 ---
 
