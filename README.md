@@ -9,17 +9,12 @@ This repository contains a vision-based localization framework that leverages th
 - [Key Features](#key-features)
 - [System Architecture](#system-architecture)
 - [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
 - [Technical Details](#technical-details)
   - [Visual Localization](#visual-localization)
   - [Inertial Integration with EKF](#inertial-integration-with-ekf)
   - [Keypoint Detection and Matching](#keypoint-detection-and-matching)
-  - [Bag-of-Visual-Words](#bag-of-visual-words)
   - [Robust Pose Initialization (RANSAC + PnP)](#robust-pose-initialization-ransac--pnp)
 - [Results and Demonstration](#results-and-demonstration)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -134,29 +129,29 @@ roslaunch visual_localization rviz.launch
 Logging is integrated using spdlog or ROS logging. Adjust logging levels in config/logging_config.yaml.
 
 
-### Technical Details
+## Technical Details
 
-Visual Localization
+### Visual Localization
 Keyframe-Based Approach: Uses keyframes to efficiently query the pre-built map.
 
 Feature Extraction: Uses BRISK for rapid keypoint detection and description.
 
-Inertial Integration with EKF
+### Inertial Integration with EKF
 Extended Kalman Filter (EKF): Fuses IMU data with visual pose estimates to maintain accuracy during rapid movements.
 
 State Propagation: IMU data is used to propagate the state estimate between visual updates.
 
-Keypoint Detection and Matching
+### Keypoint Detection and Matching
 BRISK Descriptors: Fast binary descriptors robust to scale and moderate rotations.
 
 Bag-of-Visual-Words (BoVW): Encodes visual information into a compact representation, enabling rapid matching.
 
-Robust Pose Initialization (RANSAC + PnP)
+### Robust Pose Initialization (RANSAC + PnP)
 RANSAC: Robustly identifies inliers from feature matches.
 
 PnP Algorithm: Computes the initial pose from inliers and refines it through visual-inertial fusion.
 
-Results and Demonstration
+## Results and Demonstration
 The demonstration video showcases:
 
 Localization Accuracy: Accurate pose initialization under challenging conditions.
