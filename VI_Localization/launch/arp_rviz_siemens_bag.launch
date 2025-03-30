@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- Provided by sleutene for convenience -->
+<launch>
+
+  <!-- Launch visualisation. -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ardrone_practicals)/config/rviz_control.rviz"/>
+  <!-- Launch estimator / control arp_node. -->
+  <node name="arp_node" pkg="ardrone_practicals" type="arp_node"
+      output="screen">
+
+    <!-- Camera parameters-->
+    <param name="fu" value="581.974730" />
+    <param name="fv" value="579.217167" />
+    <param name="cu" value="316.183286" />
+    <param name="cv" value="205.791903" />
+    <param name="k1" value="-0.562326" />
+    <param name="k2" value="0.358570" />
+    <param name="p1" value="-0.011735" />
+    <param name="p2" value="-0.001273" />
+    <param name="uniformityRadius" value="120" />
+    <param name="octaves" value="1" />
+    <param name="absoluteThreshold" value="20.0" />
+    <param name="maxNumKpt" value="1000000" />
+    <param name="mappingCamFocalLength" value="390.598" />
+
+    <rosparam param="T_SC">[0.0, 0.0, 1.0, 0.2, -1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]</rosparam>
+    <!-- Make sure to match the map to the world loaded above! -->
+    <param name="map" value="okvis2-slam-final_map_siemens.csv" />
+    <!--param name="map" value="okvis2-slam-final_map_garching.csv" /-->
+    <param name="occupancymap" value="occupancy-map_skokloster.dat" />
+    <!--param name="occupancymap" value="occupancy-map_garching.dat" /-->
+    <rosparam param="pointB">[1.52846, 7.6367, 0.443093]</rosparam>
+  </node>
+</launch>
+
